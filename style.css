@@ -16,6 +16,10 @@
     --secondary-color: #fff;
 }
 
+ul .sci li a{
+    color: var(--secondary-color);
+}
+
 #icon {
     width: 30px;
     cursor: pointer;
