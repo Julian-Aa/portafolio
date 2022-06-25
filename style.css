@@ -9,14 +9,33 @@
 :root {
     --primary-color: #fff;
     --secondary-color: #333;
+    --tercer-color: #F9B233;
+    --four-color: #F2A516;
+}
+
+.circle-theme {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background: var(--tercer-color);
+    clip-path: circle(1000px at right 1000px);
 }
 
 .dark-theme {
     --primary-color: #000106;
     --secondary-color: #fff;
+    --tercer-color: #5DD4F5;
+    --four-color: #54BEFF;
+    /*    --tercer-color: #5FCDD9;
+    --four-color: #0FC2C0;*/
+
 }
 
-ul .sci li a{
+ul .sci li a {
     color: var(--secondary-color);
 }
 
@@ -45,10 +64,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
 }
 
-header .logo {
-    position: relative;
+.logo {
+    cursor: pointer;
     max-width: 100px;
 }
 
@@ -58,7 +78,9 @@ header ul {
 }
 
 header ul li {
+    display: inline-block;
     list-style: none;
+    margin: 10px, 20px;
 }
 
 header ul li a {
@@ -70,6 +92,11 @@ header ul li a {
     flex: 1;
     text-align: right;
 }
+
+header ul li a:hover {
+    color: var(--four-color);
+}
+
 
 .content {
     position: relative;
@@ -93,10 +120,16 @@ header ul li a {
 }
 
 .content .textBox h2 span {
-    color: #F9B233;
+    color: var(--tercer-color);
     font-size: 1.2em;
     font-weight: 900;
+    cursor: pointer;
 }
+
+.content .textBox h2 span:hover {
+    color: var(--four-color);
+}
+
 
 .content .textBox p {
     color: var(--secondary-color);
@@ -106,13 +139,18 @@ header ul li a {
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
-    background: #F9B233;
+    background: var(--tercer-color);
     color: var(--primary-color);
     border-radius: 40px;
     font-weight: 500;
     letter-spacing: 1px;
     text-decoration: none;
 }
+
+.content .textBox a:hover {
+    background-color: var(--four-color);
+}
+
 
 .content .imgBox {
     width: 600px;
@@ -127,13 +165,27 @@ header ul li a {
 }
 
 .circle {
+    cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #F9B233;
+    bottom: 0;
+    background: var(--tercer-color);
     clip-path: circle(600px at right 800px);
+}
+
+.circle:hover {
+    background-color: var(--four-color);
+    /*   transition: bottom 1s;
+    transform: translateY(-0.5%);*/
+    clip-path: circle(1000px at right 1000px);
+
+}
+
+.circle:hover .back {
+    bottom: 40px;
 }
 
 .sci {
