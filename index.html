@@ -25,14 +25,18 @@
         </header>
         <div class="content">
             <div class="textBox">
-                <h2>No solo un chico ordinario,<br>Soy un <span>PROGRAMADOR</span></h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita veritatis labore modi dolorum
-                    rerum obcaecati laudantium atque earum magnam esse architecto praesentium maiores non laboriosam
-                    impedit excepturi aliquid, nihil pariatur.</p>
+                <h2>No solo un chico ordinario,<br>Soy <tres class="auto-type1"></tres> <sspan class="auto-type"></sspan></h2>
+                <p>Hola me llamo Julian y estudio ingenieria de sofware apasionado por el mundo de la progrmacion
+                    y aprendiendo cada vez mas cosas espero poder serte de gran ayuda para cualquier proyecto que
+                    dispongas en mente.</p>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 <a href="#">Mas sobre mi</a>
             </div>
             <div class="imgBox">
-                <img src="imagenes\pixel.png" class="me">
+                <img src="imagenes\pez.png" class="me">
             </div>
         </div>
         <ul class="sci">
@@ -47,11 +51,14 @@
                         src="imagenes\linkedin.png"></a></li>
         </ul>
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <script>
         var icon = document.getElementById("icon");
         var cir = document.getElementById("circle");
-        icon.onclick = function(){
-        document.body.classList.contains("circle-theme")
+        icon.onclick = function () {
+            document.body.classList.contains("circle-theme")
         }
         icon.onclick = function () {
             document.body.classList.toggle("dark-theme");
@@ -61,6 +68,15 @@
                 icon.src = "imagenes/moon.png";
             }
         }
+    </script>
+    
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["PROGRAMADOR", "IRON MAN"],
+            typeSpeed: 150,
+            backSpeed: 100,
+            loop: true
+        })
     </script>
 </body>
 
