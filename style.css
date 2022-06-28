@@ -6,6 +6,50 @@
 
 }
 
+.containers {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #5DD4F5;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #5dd4f5ac,
+        0 0 50px #5DD4F5,
+        0 0 100px #5DD4F5;
+    animation: animate 1ms linear infinite;
+    animation-duration: calc(125s/var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: #F9B233;
+    box-shadow: 0 0 0 10px #f9b033b8,
+        0 0 50px #F9B233,
+        0 0 100px #F9B233;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh)scale(0);
+    }
+
+    100% {
+        transform: translate(-10vh)scale(1);
+    }
+}
+
 .container {
     width: 100%;
     height: 100vh;
@@ -15,10 +59,11 @@
 }
 
 :root {
-    --primary-color: #fff;
+    /*--primary-color: #fff;*/
     --secondary-color: #333;
     --tercer-color: #F9B233;
     --four-color: #F2A516;
+    --five-color: #f9b033b8;
 }
 
 .circle-theme {
@@ -38,6 +83,7 @@
     --secondary-color: #fff;
     --tercer-color: #5DD4F5;
     --four-color: #54BEFF;
+    --five-color: #5dd4f5ac;
     /*    --tercer-color: #5FCDD9;
     --four-color: #0FC2C0;*/
 
@@ -63,16 +109,17 @@ section {
     background: var(--primary-color);
 }
 
-header {
+section u {
     position: absolute;
+    margin-top: -600px;
+    left: 1429px;
+    z-index:4;
+}
+
+header u {
     top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
+    position: absolute;
+
 }
 
 .logo {
@@ -83,6 +130,16 @@ header {
 header ul {
     position: relative;
     display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 70px 400px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    margin: auto;
+    z-index: 3;
 }
 
 header ul li {
@@ -125,16 +182,16 @@ header ul li a:hover {
 
 .content .textBox h2 {
     color: var(--secondary-color);
-    font-size: 2em;
+    font-size: 30px;
     line-height: 1.4em;
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
 }
 
 
 .content .textBox h2 sspan {
     color: var(--tercer-color);
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 900;
     cursor: pointer;
 }
@@ -159,6 +216,7 @@ h2::after {
     animation: spin 6s alternate infinite ease-in-out;
 }
 
+/*
 h2::before {
     border-top: 15px solid var(--tercer-color);
     border-left: 15px solid var(--tercer-color);
@@ -172,16 +230,16 @@ h2::after {
 
 @keyframes spin {
     100% {
-        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        transform: translateX(390%) translateY(-100%) rotate(360deg);
     }
 }
-
-
+*/
 .content .textBox p {
     color: var(--secondary-color);
 }
 
 .content .textBox a {
+    overflow: hidden;
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
@@ -194,51 +252,12 @@ h2::after {
 }
 
 .content .textBox a:hover {
+    z-index: 2;
     background-color: var(--four-color);
 }
-/*
-.content .textBox span {
-    position: absolute;
-    background-color: #000106;
-}
-
-.content .textBox span:nth-child(1) {
-    width: 100%;
-    height: 1px;
-    top: 0%;
-    left: -100%;
-}
-
-.content .textBox span:nth-child(2) {
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    right: -100%;
-}
-
-.content .textBox span:nth-child(3) {
-    width: 100%;
-    height: 100%;
-    top: 0%;
-    left: -100%;
-}
-
-.content .textBox span:nth-child(3) {
-    width: 1;
-    height: 100%;
-    bottom: -100%;
-    left: 0%;
-}
-
-.content .textBox span:nth-child(4) {
-    width: 100%;
-    height: 1px;
-    top: -100%;
-    right: 0%;
-}*/
-
 
 .content .imgBox {
+    z-index: 3;
     width: 600px;
     display: flex;
     justify-content: flex-start;
@@ -251,6 +270,7 @@ h2::after {
 }
 
 .circle {
+    z-index: 2;
     cursor: pointer;
     position: absolute;
     top: 0;
@@ -284,6 +304,8 @@ h2::after {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 3;
+
 }
 
 .sci li {
